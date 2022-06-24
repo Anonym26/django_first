@@ -12,6 +12,7 @@ from .models import Book, PublishingHouse, Author, BooksInAuthor
 
 
 class BookAdmin(admin.ModelAdmin):
+
     list_display = (
         'id', 'book_name', 'description', 'id_publishing_house', 'date_creation', 'date_add', 'is_deleted'
     )
@@ -28,12 +29,12 @@ class BookAdmin(admin.ModelAdmin):
 
 class PublishingHouseAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'publishing_house_name', 'address', 'contact_phone', 'email', 'website_linc', 'cate_add', 'is_deleted'
+        'id', 'publishing_house_name', 'address', 'contact_phone', 'email', 'website_linc', 'date_add', 'is_deleted'
     )
     list_display_links = ('id', 'publishing_house_name')
     search_fields = ('publishing_house_name',)
     list_editable = ('is_deleted',)
-    list_filter = ('cate_add', 'is_deleted')
+    list_filter = ('date_add', 'is_deleted')
     fieldsets = (
         (
             (None, {

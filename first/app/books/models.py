@@ -35,14 +35,14 @@ class PublishingHouse(models.Model):
     contact_phone = models.CharField(max_length=20, verbose_name='Номер телефона')
     email = models.EmailField(verbose_name='Email')
     website_linc = models.URLField(max_length=200, verbose_name='Ссылка на сайт', null=True, blank=True)
-    cate_add = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
+    date_add = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
     is_deleted = models.BooleanField(default=False, verbose_name='Удалено')
 
     def __str__(self):
         return self.publishing_house_name
 
     class Meta:
-        verbose_name = 'Издателььство'
+        verbose_name = 'Издательство'
         verbose_name_plural = 'Издательства'
 
 
@@ -66,4 +66,3 @@ class Author(models.Model):
 
 class BooksInAuthor(admin.TabularInline):
     model = Book.authors.through
-
