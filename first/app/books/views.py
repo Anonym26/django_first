@@ -4,6 +4,7 @@ from .models import Book
 
 
 def get_books_list(request):
-    book = Book.objects.get(pk=1)
-    return HttpResponse(f'<h1>{book.book_name}</h1>')
+    book = Book.objects.get(id_publishing_house__publishing_house_name='Утро')
+    print(book.book_name)
+    return HttpResponse(f'<h1>ОК</h1>')
 
