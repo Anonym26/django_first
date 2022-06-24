@@ -17,7 +17,7 @@ class Book(models.Model):
         null=True,
         blank=True
     )
-    date_creation = models.DateField(verbose_name='Дата написания книги', null=True, blank=True)
+    date_creation = models.CharField(max_length=4, verbose_name='Год издания', null=True, blank=True)
     date_add = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
     is_deleted = models.BooleanField(default=False, verbose_name='Удалено')
 
