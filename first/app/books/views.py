@@ -1,9 +1,16 @@
-from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Book
+from .models import Book, Author, PublishingHouse
 
 
 def get_books_list(request):
-    book = Book.objects.get(pk=1)
-    print(book.book_name)
-    return HttpResponse(f"<h1>{book.book_name}</h1>")
+
+    books = Book.objects.all()
+
+
+
+    context = {
+        'books': books,
+        'sale': False,
+    }
+
+    return render(request, 'books/list_books.html', context)

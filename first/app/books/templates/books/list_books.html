@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% if sale %}
+        <h1>Сезон скидок начался!</h1>
+    {% endif %}
+
+    {% for book in books %}
+
+        <h1>{{ book.book_name }}</h1>
+
+        {% for author in book.authors.all %}
+            <h2>{{ author.first_name }}</h2>
+        {% endfor %}
+
+        <h2>{{ book.id_publishing_house.publishing_house_name }}</h2>
+
+    {% empty %}
+        <h1>К сожалению книг не нашлось!</h1>
+    {% endfor %}
+
+</body>
+</html>
