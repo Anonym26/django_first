@@ -20,8 +20,11 @@ class Book(models.Model):
     date_creation = models.CharField(max_length=4, verbose_name='Год издания', null=True, blank=True)
     date_add = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
     is_deleted = models.BooleanField(default=False, verbose_name='Удалено')
-    book_img = models.ImageField(upload_to='photos/%Y/Ym/%d', height_field=350, width_field=150,
-                                 verbose_name='Ссылка на изображение', null=True, blank=True)
+    book_img = models.ImageField(
+        upload_to='book_img/%Y/Ym/%d',
+        verbose_name='Ссылка на изображение',
+        null=True,
+        blank=True)
 
     def __str__(self):
         return self.book_name

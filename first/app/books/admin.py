@@ -22,9 +22,10 @@ class BookAdmin(admin.ModelAdmin):
     list_filter = ('date_creation', 'book_name', 'is_deleted')
     fieldsets = (
         (None, {
-            'fields': ('book_name', 'description', 'id_publishing_house', 'date_creation', 'authors')
+            'fields': ('book_name', 'description', 'id_publishing_house', 'date_creation', 'authors', 'book_img')
         }),
     )
+
 
 
 class PublishingHouseAdmin(admin.ModelAdmin):
