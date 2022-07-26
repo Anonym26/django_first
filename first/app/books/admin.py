@@ -12,7 +12,6 @@ from .models import Book, PublishingHouse, Author, BooksInAuthor
 
 
 class BookAdmin(admin.ModelAdmin):
-
     list_display = (
         'id', 'book_name', 'description', 'id_publishing_house', 'date_creation', 'date_add', 'is_deleted'
     )
@@ -25,7 +24,6 @@ class BookAdmin(admin.ModelAdmin):
             'fields': ('book_name', 'description', 'id_publishing_house', 'date_creation', 'authors', 'book_img')
         }),
     )
-
 
 
 class PublishingHouseAdmin(admin.ModelAdmin):

@@ -1,0 +1,15 @@
+{% load static %}
+
+{% include "inc/_inc.html" %}
+
+{% include "inc/_header.html" %}
+
+{% block registration %}
+    <form action="" method="post">
+      {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Зарегистрировать пользователя</button>
+    </form>
+{% endblock %}
+
+{% include "inc/_footer.html" %}

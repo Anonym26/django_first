@@ -1,0 +1,16 @@
+{% load static %}
+
+{% include "inc/_inc.html" %}
+
+{% include "inc/_header.html" %}
+
+{% block add_book %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Отправить результат</button>
+    </form>
+{% endblock %}
+
+{% include "inc/_footer.html" %}
+
